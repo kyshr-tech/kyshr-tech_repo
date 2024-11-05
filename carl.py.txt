@@ -1,0 +1,31 @@
+import math
+
+# Permutation with repetition (P(n, r) = n^r)
+def permutation_with_repetition(n, r):
+    return n ** r
+
+# Permutation without repetition (P(n, r) = n! / (n - r)!)
+def permutation_without_repetition(n, r):
+    return math.factorial(n) // math.factorial(n - r)
+
+# Combination with repetition (C(n, r) = (n + r - 1)! / (r! (n - 1)!))
+def combination_with_repetition(n, r):
+    return math.factorial(n + r - 1) // (math.factorial(r) * math.factorial(n - 1))
+
+# Combination without repetition (C(n, r) = n! / (r!(n - r)!))
+def combination_without_repetition(n, r):
+    return math.factorial(n) // (math.factorial(r) * math.factorial(n - r))
+
+# Main function to demonstrate the calculations
+def main():
+    # Example inputs
+    n = int(input("Enter n (total number of elements): "))
+    r = int(input("Enter r (number of selections): "))
+    
+    print(f"\nPermutation with repetition: {permutation_with_repetition(n, r)}")
+    print(f"Permutation without repetition: {permutation_without_repetition(n, r)}")
+    print(f"Combination with repetition: {combination_with_repetition(n, r)}")
+    print(f"Combination without repetition: {combination_without_repetition(n, r)}")
+
+if __name__ == "__main__":
+    main()
